@@ -89,10 +89,11 @@ player4.write(player4_details, align="left", font=("Arial", 12, "normal"))
 # Fourth player makes a 360-degree turn
 turn_around(player4)
 
-# Start the race with different speeds
-start_race(player1, random.randint(1, 10))
-start_race(player2, random.randint(1, 10))
-start_race(player3, random.randint(1, 10))
-start_race(player4, random.randint(1, 10))
+# Start the race for all players together
+speeds = [random.randint(1, 10) for _ in range(4)]
+start_race(player1, speeds[0])
+start_race(player2, speeds[1])
+start_race(player3, speeds[2])
+start_race(player4, speeds[3])
 
 turtle.done()
